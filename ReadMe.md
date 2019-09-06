@@ -67,9 +67,13 @@ ReadMe.md
 ### 1.2) Description of Project Components:
 
 **Books**: Contains the newly generated Books. Anytime a book is re-generated, it will be rewritten.
+
 **Library**: Contains folders for each genre supported. Within each of these genre folders are song folders, each containing .pdf files only. **Do not add music directly to this directory**. First add it two the directory **New Music**.
+
 **New Music:** This contains music that hasnt yet been added to the directory
+
 **ReadMe.md**: This file.
+
 **src**: Contains the file `generateBooks.sh`, the only source code for this project.
 
 ### 1.3) Generate Books By Genre
