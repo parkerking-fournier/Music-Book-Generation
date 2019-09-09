@@ -66,10 +66,11 @@ while [ $continue = true ]; do
 		echo "  - horn"
 		echo "  - bone"
 		echo "  - tuba"
+		echo "  - score"
 		echo ""
 		read answer2
 		if [ ! -z $answer2 ]; then
-			if [ $answer2 = "tpt1" ] || [ $answer2 = "tpt2" ] || [ $answer2 = "horn" ] || [ $answer2 = "bone" ] || [ $answer2 = "tuba" ]; then
+			if [ $answer2 = "tpt1" ] || [ $answer2 = "tpt2" ] || [ $answer2 = "horn" ] || [ $answer2 = "bone" ] || [ $answer2 = "tuba" ] || [ $answer2 = "score" ]; then
 				instrument_name=$answer2
 				continue=false
 			else
@@ -81,6 +82,22 @@ while [ $continue = true ]; do
 	fi
 	echo ""
 done
+
+instrument_name_alt=""
+# Here, add a second instrument name because some of the files are formatted such that the first letter is capitalized
+if [ $instrument_name = "tpt1" ]; then
+	instrument_name_alt="Tpt1"
+elif [ $instrument_name = "tpt2" ]; then
+	instrument_name_alt="Tpt2"
+elif [ $instrument_name = "horn" ]; then
+	instrument_name_alt="Horn"
+elif [ $instrument_name = "bone" ]; then
+	instrument_name_alt="Bone"
+elif [ $instrument_name = "tuba" ]; then
+	instrument_name_alt="Tuba"
+elif [ $instrument_name = "score" ]; then
+	instrument_name_alt="Score"
+fi
 
 # Loop indefinitely until the user enters a valid option for what genre to generate a book for
 continue=true
@@ -193,6 +210,8 @@ for directory in *; do
 			for subfile in *; do
 				if [[ $subfile == *"$instrument_name"* ]]; then
 					cp "$subfile" "../../../Books/$directory_name"
+				elif [[ $subfile == *"$instrument_name_alt"* ]]; then
+					cp "$subfile" "../../../Books/$directory_name"
 				fi
 			done
 			# Go back
@@ -202,19 +221,35 @@ for directory in *; do
 		elif [ $instrument = false ] && [ $genre = true ]; then
 			if [[ $file == *"tpt1"* ]]; then
 				cp "$file" "../../../Books/$directory_name/tpt1_"$genre_name"_book"
+			elif [[ $file == *"Tpt1"* ]]; then
+				cp "$file" "../../../Books/$directory_name/tpt1_"$genre_name"_book"
 			elif [[ $file == *"tpt2"* ]]; then
+				cp "$file" "../../../Books/$directory_name/tpt2_"$genre_name"_book"
+			elif [[ $file == *"Tpt2"* ]]; then
 				cp "$file" "../../../Books/$directory_name/tpt2_"$genre_name"_book"
 			elif [[ $file == *"horn"* ]]; then
 				cp "$file" "../../../Books/$directory_name/horn_"$genre_name"_book"
+			elif [[ $file == *"Horn"* ]]; then
+				cp "$file" "../../../Books/$directory_name/horn_"$genre_name"_book"
 			elif [[ $file == *"bone"* ]]; then
+				cp "$file" "../../../Books/$directory_name/bone_"$genre_name"_book"
+			elif [[ $file == *"Bone"* ]]; then
 				cp "$file" "../../../Books/$directory_name/bone_"$genre_name"_book"
 			elif [[ $file == *"tuba"* ]]; then
 				cp "$file" "../../../Books/$directory_name/tuba_"$genre_name"_book"
-		fi
+			elif [[ $file == *"Tuba"* ]]; then
+				cp "$file" "../../../Books/$directory_name/tuba_"$genre_name"_book"
+			elif [[ $file == *"score"* ]]; then
+				cp "$file" "../../../Books/$directory_name/score_"$genre_name"_book"
+			elif [[ $file == *"Score"* ]]; then
+				cp "$file" "../../../Books/$directory_name/score_"$genre_name"_book"
+			fi
 
 		# If concerned about instrument AND genre, handle files accordingly
 		elif [ $instrument = true ] && [ $genre = true ]; then
 			if [[ $file == *"$instrument_name"* ]]; then
+				cp "$file" "../../../Books/"$instrument_name"_"$genre_name"_book"
+			elif [[ $file == *"$instrument_name_alt"* ]]; then
 				cp "$file" "../../../Books/"$instrument_name"_"$genre_name"_book"
 			fi
 		fi

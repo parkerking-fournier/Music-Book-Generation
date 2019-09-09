@@ -141,6 +141,9 @@ To run the bash script `generateBooks.sh`, one needs to navigate to the **src** 
 - Drag the **src** folder into the terminal. It should now say something like:
 `some_stuff$ cd some_other_stuff/Brass\ Music/src`
 - Hit `enter` or `return`. This will change directory (the cd command) to the directory **src**.
+- It is possible that the bash script (a .sh file) will not have correct file permissions when you download this project. This is done automatically by some operating systems to prevent users from running potentially harmful programs. You only need to change the file permissions once, and can do so by entering the following command into the Terminal:
+`chmod 777 generateBooks.sh`. 
+For those curious, `chmod` is a bash command, and `777` and `generateBooks.sh` are extra information passed to this command about which type of permissions to give and to which file, respectively. 
 - Finally, to run the script type the following into the Terminal:
 `./generateBooks.sh`. Hit `enter` or `return` and follow the promts. 
 - If at any point during the program you want to exit, simply press `control` + `c` in the Terminal.
