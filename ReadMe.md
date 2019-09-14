@@ -1,4 +1,4 @@
-# Welcome to the Brass Quintet Music Book Generation ReadMe File!
+# Welcome to The Aspen Book ReadMe File!
 
 ## Contents
 - 1 -  What does it do?
@@ -15,6 +15,8 @@
     - 2.4 - Adding New Music
 
 ## 1) What does it do?
+The Aspen Book, as legend has it, is a giant repository of Brass Quintet music that has been passed down and around for decades. It's awesome. When I first received it, it was a mess of file names and disordered file structures. At one point the main library folder contained a copy of itself. 
+
 The purpose of this project is to organize Brass Quintet music in a standardized fashion and to automate the generation of different sets of music for people who are using this Library. 
 
 #### 1.1) Project Layout
