@@ -112,11 +112,10 @@ This option will generate a directory named **<instrument_name_goes_here>_book**
 Example: Creating the book for instrument `Tuba`.
 ```
 Books
-│   └─── Wedding_Books
-|   |   └─── tuba_book
-│   |   |   file1.pdf
-│   |   |   file2.pdf
-|   |   |   ...
+|   └─── tuba_book
+|   |   file1.pdf
+|   |   file2.pdf
+|   |   ...
 ```
 
 ### 1.5) Generate Books by both Instrument and Genre
