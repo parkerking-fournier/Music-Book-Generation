@@ -72,7 +72,7 @@ ReadMe.md
 
 **Library**: Contains folders for each genre supported. Within each of these genre folders are song folders, each containing .pdf files only. **Do not add music directly to this directory**. First add it two the directory **New Music**.
 
-**New Music:** This contains music that hasnt yet been added to the directory
+**New Music:** This contains music that hasnt yet been added to the directory **Library**
 
 **ReadMe.md**: This file.
 
